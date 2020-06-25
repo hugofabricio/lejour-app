@@ -14,7 +14,7 @@ export default {
     yellow500: '#FFB854',
   },
   form: {
-    padding: '0.5rem 1rem',
+    padding: '0.4rem 1rem',
     borderRadius: '0.3rem',
     color: '#333333',
     backgroundColor: '#ffffff',

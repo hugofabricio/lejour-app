@@ -5,7 +5,7 @@ export const StepsPaginationWrapper = styled.aside`
   position: fixed;
   width: 48px;
   top: 80px;
-  left: 80px;
+  left: 90px;
   display: flex;
   flex-direction: column;
 
@@ -33,6 +33,7 @@ export const StepsPaginationItem = styled.span`
   border-radius: 50%;
   font-weight: 700;
   line-height: 0;
+  transition: all 0.4s ease-in-out;
 
   &:not(:last-of-type) {
     margin-bottom: 16px;

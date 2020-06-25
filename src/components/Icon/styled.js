@@ -3,7 +3,6 @@ import styled from 'styled-components'
 export const IconWrapper = styled.span`
   flex-shrink: 0;
   display: flex;
-  margin: auto;
 
   ${({ size, color, theme }) => `
     width: ${size}px;

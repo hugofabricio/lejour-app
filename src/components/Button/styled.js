@@ -5,7 +5,6 @@ export const Button = styled.a`
   cursor: pointer;
   font-weight: 700;
   display: inline-flex;
-  align-items: center;
   text-align: center;
   vertical-align: middle;
   user-select: none;
@@ -23,6 +22,10 @@ export const Button = styled.a`
   word-spacing: normal;
   text-shadow: none;
   align-items: flex-start;
+
+  .icon {
+    margin: auto auto auto 8px;
+  }
 
   ${({ fluid }) =>
     fluid &&

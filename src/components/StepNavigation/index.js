@@ -13,7 +13,7 @@ const StepNavigation = ({ step, form }) => {
 
   useEffect(() => {
     setPrevPath(step > 1 && step <= 5 ? `/steps/${step - 1}` : `/`)
-    setNextLabel(step < 5 ? 'Avançar' : 'Enviar')
+    setNextLabel(step < 5 ? 'Próximo' : 'Enviar')
   }, [step])
 
   const active = step >= 1 && step <= 5

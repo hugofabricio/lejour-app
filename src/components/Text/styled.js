@@ -2,9 +2,21 @@ import { rem } from 'polished'
 import styled from 'styled-components'
 
 export const Text = styled.p`
-  line-height: 1.5;
+  line-height: 1.4;
   color: ${({ theme, color }) => theme.colors[color]};
   font-size: ${({ size }) => rem(size)};
+
+  ${({ italic }) =>
+    italic &&
+    `
+    font-style: italic;
+  `}
+
+  ${({ bold }) =>
+    bold &&
+    `
+    font-weight: bold;
+  `}
 
   ${({ marginTop }) =>
     marginTop &&
