@@ -8,7 +8,10 @@ import * as S from './styled'
 const StepsPagination = ({ match, currentStep }) => {
   const Dots = Object.keys(steps).map((step, i) => {
     return (
-      <S.StepsPaginationItem key={i} active={i + 1 <= currentStep}>
+      <S.StepsPaginationItem
+        key={i}
+        active={match ? i + 1 <= currentStep : true}
+      >
         {i + 1}
       </S.StepsPaginationItem>
     )

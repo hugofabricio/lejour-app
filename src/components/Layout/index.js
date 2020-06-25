@@ -9,6 +9,7 @@ import { GlobalStyles, theme } from '../../style'
 import checkPath from '../../utils/checkPath'
 import StepNavigation from '../StepNavigation'
 import StepsPagination from '../StepsPagination'
+import { WaveLeft, WaveRight } from '../Waves'
 import * as S from './styled'
 
 const Layout = () => {
@@ -17,6 +18,12 @@ const Layout = () => {
 
   const matchStep = useRouteMatch({
     path: '/steps/:step',
+    strict: true,
+    sensitive: true,
+  })
+
+  const matchLive = useRouteMatch({
+    path: '/meu-casamento',
     strict: true,
     sensitive: true,
   })
@@ -38,7 +45,14 @@ const Layout = () => {
       <AnimatePresence>
         <S.LayoutWrapper>
           {checkHome && (
-            <StepsPagination match={matchStep} currentStep={currentStep} />
+            <>
+              {!matchLive && (
+                <StepsPagination match={matchStep} currentStep={currentStep} />
+              )}
+              <WaveLeft />
+              <WaveRight />
+              <S.LayoutRings name="rings" color="red500" size={340} />
+            </>
           )}
 
           <Switch location={location} key={location.pathname}>

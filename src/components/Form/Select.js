@@ -4,15 +4,18 @@ import { object, string, array } from 'prop-types'
 
 import * as S from './styled'
 
-const Input = ({ register, name, label, options, error, ...rest }) => {
+const Input = ({ name, label, options, error, ...rest }) => {
   return (
     <S.Group>
-      <S.Label for={name}>{label}</S.Label>
-      <S.Select id={name} name={name} ref={register} {...rest}>
+      <S.Label htmlFor={name} className="sr-only">
+        {label}
+      </S.Label>
+      <S.Select id={name} name={name} {...rest}>
+        <S.SelectOption value="">{label}</S.SelectOption>
         {options.map(({ value, label }, i) => (
-          <option key={i} value={value}>
+          <S.SelectOption key={i} value={value}>
             {label}
-          </option>
+          </S.SelectOption>
         ))}
       </S.Select>
     </S.Group>
@@ -20,7 +23,6 @@ const Input = ({ register, name, label, options, error, ...rest }) => {
 }
 
 Input.propTypes = {
-  register: object,
   name: string,
   label: string,
   options: array,

@@ -10,7 +10,7 @@ const StepPage = ({ match, form }) => {
   const CurrentStep = steps[step] || null
 
   return (
-    <Section paddingTop={70} paddingBottom={70}>
+    <Section className="step" paddingTop={80} paddingBottom={180}>
       {CurrentStep && <CurrentStep step={step} form={form} />}
     </Section>
   )
