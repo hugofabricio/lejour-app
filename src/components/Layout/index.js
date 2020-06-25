@@ -8,7 +8,7 @@ import routes from '../../routes'
 import { GlobalStyles, theme } from '../../style'
 import checkPath from '../../utils/checkPath'
 import StepNavigation from '../StepNavigation'
-import Steps from '../Steps'
+import StepsPagination from '../StepsPagination'
 import * as S from './styled'
 
 const Layout = () => {
@@ -37,7 +37,9 @@ const Layout = () => {
       <GlobalStyles />
       <AnimatePresence>
         <S.LayoutWrapper>
-          {checkHome && <Steps match={matchStep} step={currentStep} />}
+          {checkHome && (
+            <StepsPagination match={matchStep} currentStep={currentStep} />
+          )}
 
           <Switch location={location} key={location.pathname}>
             {routes.map((route, index) => (
