@@ -13,6 +13,15 @@ export default {
     pink500: '#DB5D79',
     yellow500: '#FFB854',
   },
+  form: {
+    padding: '0.5rem 1rem',
+    borderRadius: '0.3rem',
+    color: '#333333',
+    backgroundColor: '#ffffff',
+    borderColor: '#C5CEE0',
+    borderColorFocus: '#86D0CB',
+    labelColorFocus: '#86D0CB',
+  },
   button: {
     default: {
       padding: '0.75rem 1.5rem',
@@ -24,8 +33,8 @@ export default {
       max: '40px',
     },
     h2: {
-      min: 24,
-      max: 48,
+      min: '18px',
+      max: '24px',
     },
     h3: {
       min: 24,
