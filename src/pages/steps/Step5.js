@@ -29,8 +29,8 @@ const Step = ({ form, step }) => {
 
   return (
     <Container>
-      <Row justify="center">
-        <Col md={11} lg={10}>
+      <Row justify="flex-end">
+        <Col sm={10} md={11}>
           <Headline title="Documentos" />
           <Form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <CardForm title="Clique abaixo para fazer o upload dos arquivos.">

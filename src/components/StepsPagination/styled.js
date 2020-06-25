@@ -1,6 +1,8 @@
 import { rem, linearGradient } from 'polished'
 import styled from 'styled-components'
 
+import media from '../../utils/media'
+
 export const StepsPaginationWrapper = styled.aside`
   position: fixed;
   width: 48px;
@@ -19,13 +21,22 @@ export const StepsPaginationWrapper = styled.aside`
     top: 5%;
     left: 0;
     right: 0;
-    margin: 0 auto;
+    margin: auto;
     z-index: -1;
   }
+
+  ${media.lessThan('md')`
+    left: 60px;
+  `}
+
+  ${media.lessThan('sm')`
+    display: none;
+  `}
 `
 
 export const StepsPaginationItem = styled.span`
   display: flex;
+  flex-shrink: 0;
   justify-content: center;
   align-items: center;
   width: 48px;
@@ -34,18 +45,6 @@ export const StepsPaginationItem = styled.span`
   font-weight: 700;
   line-height: 0;
   transition: all 0.4s ease-in-out;
-
-  &:not(:last-of-type) {
-    margin-bottom: 16px;
-  }
-
-  ${({ theme, active }) => `
-    background-color: ${theme.colors.neutral0};
-    font-family: ${theme.font[1]};
-    font-size: ${rem(20)};
-    color: ${active ? theme.colors.neutral0 : theme.colors.red500};
-    border: 2px solid ${theme.colors.red500};
-  `}
 
   ${({ active, theme }) =>
     active &&
@@ -57,4 +56,24 @@ export const StepsPaginationItem = styled.span`
       toDirection: '260deg',
       fallback: theme.colors.red500,
     })}
+
+  ${({ theme, active }) => `
+    background-color: ${theme.colors.neutral0};
+    font-family: ${theme.font[1]};
+    font-size: ${rem(20)};
+    color: ${active ? theme.colors.neutral0 : theme.colors.red500};
+    border: 2px solid ${theme.colors.red500};
+  `}
+
+  ${media.greaterThan('sm')`
+    &:not(:last-of-type) {
+      margin-bottom: 16px;
+    }
+  `}
+
+  ${media.lessThan('sm')`
+    &:not(:last-of-type) {
+      margin-right: 12px;
+    }
+  `}
 `

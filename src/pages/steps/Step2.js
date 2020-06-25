@@ -9,7 +9,6 @@ import { number, object } from 'prop-types'
 import CardForm from '../../components/CardForm'
 import { Form, Input, Select } from '../../components/Form'
 import Headline from '../../components/Headline'
-import states from '../../utils/states'
 import updateAction from '../../utils/updateAction'
 import { stepTwoValidationSchema } from '../../utils/validationSchema'
 
@@ -28,8 +27,8 @@ const Step = ({ form, step }) => {
 
   return (
     <Container>
-      <Row justify="center">
-        <Col md={11} lg={10}>
+      <Row justify="flex-end">
+        <Col sm={10} md={11}>
           <Headline title="Dados complementares" />
           <Form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <CardForm title="Casamento">
@@ -81,7 +80,7 @@ const Step = ({ form, step }) => {
               <Col md={6} lg={5}>
                 <CardForm title="Noivo(a)">
                   <Row>
-                    <Col sm={12}>
+                    <Col xs={12}>
                       <Input
                         name="engaged_new_name_1"
                         label="Nome após casamento"
@@ -90,7 +89,7 @@ const Step = ({ form, step }) => {
                         errors={errors}
                       />
                     </Col>
-                    <Col sm={12}>
+                    <Col xs={12}>
                       <Input
                         name="previous_weddings_1"
                         label="Casamentos anteriores? Quantos?"
@@ -168,7 +167,7 @@ const Step = ({ form, step }) => {
               <Col md={6} lg={5} offset={{ lg: 1 }}>
                 <CardForm title="Noivo(a)">
                   <Row>
-                    <Col sm={12}>
+                    <Col xs={12}>
                       <Input
                         name="engaged_new_name_2"
                         label="Nome após casamento"
@@ -177,7 +176,7 @@ const Step = ({ form, step }) => {
                         errors={errors}
                       />
                     </Col>
-                    <Col sm={12}>
+                    <Col xs={12}>
                       <Input
                         name="previous_weddings_2"
                         label="Casamentos anteriores? Quantos?"

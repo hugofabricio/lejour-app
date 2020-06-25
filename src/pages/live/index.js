@@ -9,7 +9,7 @@ const LivePage = ({ match }) => {
     <Section paddingTop={80} paddingBottom={180}>
       <Container>
         <Row justify="center">
-          <Col md={11} lg={10}>
+          <Col md={11}>
             <Headline title="Meu Casamento!" />
             <Row>
               <Col md={8} lg={7}></Col>

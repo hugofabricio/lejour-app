@@ -1,6 +1,8 @@
 import { linearGradient } from 'polished'
 import styled from 'styled-components'
 
+import media from '../../utils/media'
+
 export const StepNavigationWrapper = styled.nav`
   position: fixed;
   z-index: 1499;
@@ -17,6 +19,11 @@ export const StepNavigationWrapper = styled.nav`
   opacity: ${({ active }) => (active ? 1 : 0)};
   visibility: ${({ active }) => (active ? 'visible' : 'hidden')};
   transform: translateY(${({ active }) => (active ? '0' : '100%')});
+
+  ${media.lessThan('sm')`
+    height: 90px;
+    justify-content: space-between;
+  `}
 
   ${({ theme }) =>
     linearGradient({

@@ -44,9 +44,11 @@ const Layout = () => {
       <GlobalStyles />
       <AnimatePresence>
         <S.LayoutWrapper>
-          {checkHome && !matchLive && (
+          {checkHome && (
             <>
-              <StepsPagination match={matchStep} currentStep={currentStep} />
+              {!matchLive && (
+                <StepsPagination match={matchStep} currentStep={currentStep} />
+              )}
               <WaveLeft />
               <WaveRight />
               <S.LayoutRings name="rings" color="red500" size={340} />

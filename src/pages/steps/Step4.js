@@ -28,8 +28,8 @@ const Step = ({ form, step }) => {
 
   return (
     <Container>
-      <Row justify="center">
-        <Col md={11} lg={10}>
+      <Row justify="flex-end">
+        <Col sm={10} md={11}>
           <Headline title="Testemunhas Noivo(a) 02" />
           <Form ref={form} onSubmit={handleSubmit(onSubmit)}>
             <Row>
