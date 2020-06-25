@@ -31,7 +31,7 @@ export const Button = styled.a`
     display: flex;
   `}
 
-  ${({ theme, color, background, ghost }) => `
+  ${({ theme, color, background }) => `
     padding: ${theme.button.default.padding};
     color: ${theme.colors[color]};
     background-color: ${theme.colors[background]};
@@ -42,5 +42,29 @@ export const Button = styled.a`
       background-color: ${darken('0.1', theme.colors[background])};
       border-color: ${darken('0.1', theme.colors[background])};
     }
+  `}
+
+  ${({ marginTop }) =>
+    marginTop &&
+    `
+    margin-top: ${marginTop}px;
+  `}
+
+  ${({ marginBottom }) =>
+    marginBottom &&
+    `
+    margin-bottom: ${marginBottom}px;
+  `}
+
+  ${({ marginLeft }) =>
+    marginLeft &&
+    `
+    margin-left: ${marginLeft}px;
+  `}
+
+  ${({ marginRight }) =>
+    marginRight &&
+    `
+    margin-right: ${marginRight}px;
   `}
 `

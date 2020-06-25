@@ -11,8 +11,8 @@ export const StepNavigationWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 60px;
+  padding-right: 60px;
   transition: all 0.5s ease-in-out;
   opacity: ${({ active }) => (active ? 1 : 0)};
   visibility: ${({ active }) => (active ? 'visible' : 'hidden')};

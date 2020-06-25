@@ -16,26 +16,28 @@ const StepNavigation = ({ step, form }) => {
     setNextLabel(step < 5 ? 'Avançar' : 'Enviar')
   }, [step])
 
+  const active = step >= 1 && step <= 5
+
   return (
-    <S.StepNavigationWrapper active={step >= 1 && step <= 5}>
+    <S.StepNavigationWrapper active={active}>
       <Button
-        as={Link}
-        to={prevPath}
+        to={(location) => ({ ...location, pathname: prevPath })}
         color="neutral0"
         background="ghost"
         title="Voltar"
+        marginRight={12}
+        as={Link}
       >
         Voltar
       </Button>
 
       <Button
-        title={nextLabel}
+        title={nextLabel.toString()}
+        color="red500"
+        background="neutral0"
         onClick={() =>
           form.current?.dispatchEvent(new Event('submit', { cancelable: true }))
         }
-        color="red500"
-        background="neutral0"
-        as={Link}
       >
         {nextLabel}
         <Icon color="red500" name="arrow-right" size="12" marginLeft="4" />
