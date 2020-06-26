@@ -1,4 +1,4 @@
-import { isValidCPF, isValidPhone } from '@brazilian-utils/brazilian-utils'
+// import { isValidCPF, isValidPhone } from '@brazilian-utils/brazilian-utils'
 import * as yup from 'yup'
 
 export const stepOneValidationSchema = yup.object().shape({
