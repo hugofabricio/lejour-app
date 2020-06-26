@@ -16,7 +16,6 @@ export const Button = styled.a`
   line-height: 1.1;
   border-radius: ${rem(25)};
   transition: background-color color 0.15s ease-in-out;
-  appearance: button;
   overflow: visible;
   text-rendering: auto;
   word-spacing: normal;
